@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    /* font-family: 'Roboto', sans-serif; */
+    line-height: 1.5;
+    color: black;
+    background-color: white;
+    scroll-behavior: smooth;
+}
+
+h1,h2,h3,h5 {
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+section {
+    padding: 100px 50px;
+    max-width: max-content;
+    margin: auto;
+}
+
+header {
+    background: local;
+    box-shadow: inset;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+nav {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 1.5vh;
+    /* background-color: #555;
+    position: sticky;
+    color: white; */
+}
+/* 
+.logo {
+  height: 50px;
+  width: 50px;
+  clip-path: circle(50% at 50% 50%);
+} */
+ nav div img {
+  height: 50px;
+  width: 50px;
+ }
+
+nav ul {
+    display: flex;
+    /* list-style-position: inside; */
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 1.5vh;
+}
+
+nav ul li a {
+    padding: 8px 12px;
+    transition: background 0.3s;
+    font-size: 2  vh;
+}
+
+nav ul li a:hover {
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#circle-clip-logo {
+  width: 30px;
+  height: 30px;
+  clip-path: circle(50% at 50% 50%);
+}
+
+#circle-clip {
+  width: 200px;
+  height: 200px;
+  clip-path: circle(50% at 50% 50%);
+}
+
+#hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#hero h1 {
+    font-size: 5vh;
+    margin-bottom: 0.5vh;
+}
+#hero h1 span {
+  color: rgb(78, 13, 13);
+}
+#hero h5 {
+    font-size: 3vh;
+}
+#hero p {
+    font-size: 2vh;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #333;
+    color: #fff;
+    border-radius: 5px;
+    transition: background 0.3s  ;
+}
+.btn:hover {
+    background: #555;
+    transform: scale(1.05);
+}
+
+#about, #projects, #contact {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+#about h2, #projects h2, #contact h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 5ch;
+}
+
+.project-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10vh, 1fr));
+}
+.project-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+.project-card a {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(78, 13, 13);
+  text-decoration: none;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5vh;
+  font-size: 2vh;
+  background: #eee;
+  position: static;
+}
+
+/* Initial hidden state for scroll animations */
+.hidden {
+  opacity: 0;
+  transform: translateY(100px);  /* Optional: Adjust to control how much it slides */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+/* When the element comes into view, it will 'show' */
+.show {
+  opacity: 1;
+  transform: translateY(0);  /* Optional: Adjust to control how much it slides */
+}
+
+
+.social-links a i {
+  padding-right: 10px;
+  font-size: 28px;
+  color: #333;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-links a i:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+
+
+
+/* Dark Mode Base */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header and Navbar */
+body.dark-mode header {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode nav ul li a:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Button Styling */
+body.dark-mode .btn {
+  background: #f5f5f5;
+  color: #121212;
+}
+body.dark-mode .btn:hover {
+  background: #ddd;
+}
+
+/* Project Cards */
+body.dark-mode .project-card {
+  background: #1f1f1f;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+/* Footer */
+body.dark-mode footer {
+  background: #1e1e1e;
+  color: #ccc;
+}
+
+/* Social Links */
+.social-links a {
+  margin: 0 10px;
+  font-size: 1.4rem;
+  transition: color 0.3s;
+}
+body.dark-mode .social-links a:hover {
+  color: #9ecfff;
+}
+
+/* Optional: Toggle Button Positioning */
+.dark-toggle {
+  size: 1rem;
+  /* position: fixed;
+  top: 20px;
+  right: 5px;
+  z-index: 1001; */
+}
+.dark-toggle:hover {
+  background: #918d8d;
+  color: #fff;
+  border-radius: 5px;
+}
